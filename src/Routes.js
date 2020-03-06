@@ -1,13 +1,18 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Home from "./containers/Home";
-import NotFound from "./containers/NotFound";
+import { BrowserRouter as Router } from 'react-router-dom';
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import Admin from './components/Admin/Admin'
+import NotFound from "./components/NotFound";
+import { AuthenticatedRoute, PublicRoute } from './authenticatedroute';
 
 export default function Routes() {
   return (
-    <Switch>
-      <Route path="/" exact component={Home} />
-      <Route component={NotFound} />
-    </Switch>
+    <Router>
+    <PublicRoute exact path={'/'} component={Home} />
+    <PublicRoute exact path={'/login'} component={Login} />
+    <PublicRoute component={NotFound} />
+    <AuthenticatedRoute exact path={'/admin'} component={Admin} />
+    </Router>
   );
 }
