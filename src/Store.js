@@ -90,7 +90,7 @@ export const handleLogin = (email, password) => {
     })
 
     const options = {
-      baseURL: 'https://final-mcga-servidor.herokuapp.com/',
+      baseURL: 'http://localhost:4000/',
       timeout: 25000,
       method: 'POST',
       headers: {
@@ -98,7 +98,7 @@ export const handleLogin = (email, password) => {
       },
     }
 
-    return fetch(`https://final-mcga-servidor.herokuapp.com/login`, { ...options, body: JSON.stringify({ email, password }) })
+    return fetch(`http://localhost:4000/login`, { ...options, body: JSON.stringify({ email, password }) })
       .then(res => res.json())
       .then(data => {
         if (!data.success) {
@@ -132,7 +132,7 @@ export const getClients = () => {
       }
     };
 
-    return fetch(`https://final-mcga-servidor.herokuapp.com/getclients`, { ...options })
+    return fetch(`http://localhost:4000/getclients`, { ...options })
       .then(res => res.json())
       .then(data => {
         console.log("GETTING_CLIENTS", data);
@@ -170,7 +170,7 @@ export const remClient = cuit => {
       body: JSON.stringify({ cuit })
     };
 
-    return fetch(`https://final-mcga-servidor.herokuapp.com/remclient`, options)
+    return fetch(`http://localhost:4000/remclient`, options)
       .then(res => res.json())
       .then(data => {
         console.log("REMOVING_CLIENT", data);

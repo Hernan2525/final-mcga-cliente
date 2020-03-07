@@ -9,21 +9,6 @@ function App(props) {
   return (
 
     <div className="App container">
-      <Navbar fluid collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Link to="/">MCGA</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-         <Nav pullRight>
-           <LinkContainer to="/login">
-             <NavItem>Iniciar Sesión</NavItem>
-           </LinkContainer>
-         </Nav>
-       </Navbar.Collapse>
-      </Navbar>
       <Routes />
     </div>
   );
