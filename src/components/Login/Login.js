@@ -31,7 +31,7 @@ const handleLogin = async () => {
           <FormControl
             autoFocus
             type="email"
-            value={email}
+            value={props.email}
             onChange={props.onChangeEmail}
             placeholder="Email"
           />
@@ -39,12 +39,12 @@ const handleLogin = async () => {
         <FormGroup controlId="password" bsSize="large">
           <ControlLabel>Password</ControlLabel>
           <FormControl
-            value={password}
+            value={props.password}
             onChange={props.onChangePassword}
             type="password"
           />
         </FormGroup>
-        <Button block bsSize="large" disabled={!validateForm()} type="submit">
+        <Button block bsSize="large" type="submit">
           Login
         </Button>
       </form>

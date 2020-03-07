@@ -7,6 +7,7 @@ import Routes from "./Routes";
 
 function App(props) {
   return (
+
     <div className="App container">
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
@@ -17,9 +18,6 @@ function App(props) {
         </Navbar.Header>
         <Navbar.Collapse>
          <Nav pullRight>
-           <LinkContainer to="/signup">
-             <NavItem>Registrarse</NavItem>
-           </LinkContainer>
            <LinkContainer to="/login">
              <NavItem>Iniciar Sesión</NavItem>
            </LinkContainer>
