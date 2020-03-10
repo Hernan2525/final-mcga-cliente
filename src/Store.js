@@ -99,9 +99,12 @@ export const handleLogin = (email, password) => {
     }
 
     return fetch('https://final2020-mcga-servidor.herokuapp.com/login', { ...options, body: JSON.stringify({ email, password }) })
-      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        return res.json()
+      })
       .then(data => {
-        console.log(data);
+        console.log(data)
         if (!data.success) {
           return Promise.reject(data)
         }
@@ -111,6 +114,7 @@ export const handleLogin = (email, password) => {
         })
       })
       .catch(error => {
+        console.log(error)
         return dispatch({
           type: 'LOGIN_ERROR',
           payload: error,
