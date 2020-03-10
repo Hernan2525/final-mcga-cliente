@@ -90,7 +90,7 @@ export const handleLogin = (email, password) => {
     })
 
     const options = {
-      baseURL: 'https://final2020-mcga-servidor.herokuapp.com',
+      baseURL: 'https://final2020-mcga-servidor.herokuapp.com/',
       timeout: 25000,
       method: 'POST',
       headers: {

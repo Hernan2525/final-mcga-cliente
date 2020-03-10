@@ -21,7 +21,7 @@ const handleLogin = async () => {
   	errorPopup = "YES";
   	console.log(errorPopup)
   }
-}
+ }
 
   return (
     <div className="Login">
