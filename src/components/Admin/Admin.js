@@ -2,10 +2,9 @@ import React, { useState, Fragment } from 'react'
 import AddClientForm from './AddClientForm'
 import EditClientForm from './EditClientForm'
 import ClientTable from './ClientTable'
-import styles from './Admin.css'
+import './Admin.css'
 import axios from 'axios'
 import { Link } from "react-router-dom";
-import { LinkContainer } from "react-router-bootstrap";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 
 const App = () => {

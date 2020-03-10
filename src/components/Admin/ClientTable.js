@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Admin.css'
+import './Admin.css'
 import { Table } from "react-bootstrap";
 
 const clientTable = props => (

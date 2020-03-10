@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './Admin.css'
+import './Admin.css'
 
 const AddClientForm = props => {
 	const initialFormState = { id: null, cuit: '', nombre: '', telefono: '' }

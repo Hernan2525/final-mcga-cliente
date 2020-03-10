@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styles from './Admin.css'
+import './Admin.css'
 
 const EditClientForm = props => {
   const [ client, setClient ] = useState(props.currentClient)
