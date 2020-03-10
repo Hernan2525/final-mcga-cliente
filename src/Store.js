@@ -90,29 +90,26 @@ export const handleLogin = (email, password) => {
     })
 
     const options = {
-      baseURL: 'https://final2020-mcga-servidor.herokuapp.com/',
+      baseURL: 'http://localhost:4000',
       timeout: 25000,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+
       },
     }
 
-    return fetch('https://final2020-mcga-servidor.herokuapp.com/login', { ...options, body: JSON.stringify({ email, password }) })
-      .then(res => {
-        console.log(res)
-        return res.json()
+    return fetch('http://localhost:4000/login', { ...options, body: JSON.stringify({ email, password }) })
+    .then(res => res.json())
+    .then(data => {
+      if (!data.success) {
+        return Promise.reject(data)
+      }
+      return dispatch({
+        type: 'LOGIN_SUCCESS',
+        payload: data,
       })
-      .then(data => {
-        console.log(data)
-        if (!data.success) {
-          return Promise.reject(data)
-        }
-        return dispatch({
-          type: 'LOGIN_SUCCESS',
-          payload: data,
-        })
-      })
+    })
       .catch(error => {
         console.log(error)
         return dispatch({

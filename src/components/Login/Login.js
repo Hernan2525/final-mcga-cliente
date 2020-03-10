@@ -1,8 +1,7 @@
-import React from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import "./Login.css";
+import React from 'react'
 import { connect } from 'react-redux'
 import { onChangeEmail, onChangePassword, handleLogin } from '../../Store'
+import './Login.css'
 
 const Login = (props) => {
 
@@ -21,35 +20,42 @@ const handleLogin = async () => {
   	errorPopup = "YES";
   	console.log(errorPopup)
   }
- }
+}
 
   return (
-    <div className="Login">
-      <form onSubmit={handleLogin}>
-        <FormGroup controlId="email" bsSize="large">
-          <ControlLabel>Email</ControlLabel>
-          <FormControl
-            autoFocus
-            type="email"
-            value={props.email}
-            onChange={props.onChangeEmail}
-            placeholder="Email"
-          />
-        </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
-          <ControlLabel>Password</ControlLabel>
-          <FormControl
-            value={props.password}
-            onChange={props.onChangePassword}
-            type="password"
-          />
-        </FormGroup>
-        <Button block bsSize="large" type="submit">
-          Login
-        </Button>
-      </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+          <h3 class="panel-title">Login</h3>
+        </div>
+        <div class="panel-body">
+        <form>
+          <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" width="48"
+          name="email" onChange={props.onChangeEmail}
+          defaultValue={props.email} placeholder="Email"/>
+          </div>
+          <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" name="password"
+          onChange={props.onChangePassword} value={props.password} placeholder="Contraseña"/>
+          </div>
+          <button type="button" class="btn btn-primary" onClick={handleLogin}>Iniciar Sesión</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-3">
     </div>
-  );
+  </div>
+</div>
+
+  )
 }
 
 const mapStateToProps = (state) => {
