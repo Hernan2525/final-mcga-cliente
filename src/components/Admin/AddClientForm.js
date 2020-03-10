@@ -12,7 +12,7 @@ const AddClientForm = props => {
 	}
 
 	return (
-		<form width="100%"
+		<form
 			onSubmit={event => {
 				event.preventDefault()
 				if (!client.cuit || !client.nombre || !client.telefono) return

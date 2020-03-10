@@ -12,7 +12,7 @@ const App = () => {
 	const clientsData = [];
 
 	window.onload = function (){
-		fetch('http://localhost:4000/getclients')
+		fetch('https://final2020-mcga-servidor.herokuapp.com/getclients')
       .then(res => {
           console.log(res);
           return res.json()
@@ -35,7 +35,7 @@ const App = () => {
 	// CRUD operations
 	const addClient = client => {
 		client.id = clients.length + 1
-		axios.post('http://localhost:4000/addclient', {
+		axios.post('https://final2020-mcga-servidor.herokuapp.com/addclient', {
 			id: client.id,
 			cuit: client.cuit,
 			nombre: client.nombre,
@@ -47,7 +47,7 @@ const App = () => {
 	const deleteClient = id => {
 		setEditing(false)
 
-		axios.post('http://localhost:4000/remclient', {
+		axios.post('https://final2020-mcga-servidor.herokuapp.com/remclient', {
 			id: id
 		})
 
@@ -57,7 +57,7 @@ const App = () => {
 	const updateClient = (id, updatedClient) => {
 		setEditing(false)
 
-		axios.post('http://localhost:4000/modclient', {
+		axios.post('https://final2020-mcga-servidor.herokuapp.com/modclient', {
 			id: id,
 			cuit: updatedClient.cuit,
 			nombre: updatedClient.nombre,

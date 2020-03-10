@@ -13,7 +13,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:4000/getclients')
+    fetch('https://final2020-mcga-servidor.herokuapp.com/getclients')
       .then(res => {
           console.log(res);
           return res.json()
